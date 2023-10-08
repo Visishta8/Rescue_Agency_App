@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Message_Application"
+    android:background="@drawable/button">
+
+    <!-- Add a Toolbar at the top -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="410dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/bg_dish"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Application"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.0">
+
+    <!-- activity_second.xml -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+        <!-- Enter the number of people affected -->
+        <TextView
+            android:id="@+id/textViewPeopleAffected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter the number of people affected"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:fontFamily="@font/brandier"
+            android:textColor="@color/white"
+            android:layout_marginTop="25dp" />
+
+        <!-- Radio buttons for people affected (horizontal) -->
+        <LinearLayout
+            android:id="@+id/linearPeopleAffected"
+            android:layout_width="1000dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewPeopleAffected"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp">
+
+            <RadioButton
+                android:id="@+id/radioButton1_25"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/area_stencil"
+                android:textColor="@color/white"
+                android:text="1-25" />
+
+            <RadioButton
+                android:id="@+id/radioButton26_50"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/area_stencil"
+                android:textColor="@color/white"
+                android:text="26-50" />
+
+            <RadioButton
+                android:id="@+id/radioButton51_100"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/area_stencil"
+                android:textColor="@color/white"
+                android:text="51-100" />
+
+            <RadioButton
+                android:id="@+id/radioButton100Plus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/area_stencil"
+                android:textColor="@color/white"
+                android:text="100+" />
+        </LinearLayout>
+
+
+        <!-- Enter no of people needed -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp">
+        <TextView
+            android:id="@+id/textViewPeopleNeeded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter number of people needed"
+            android:textSize="16dp"
+            android:layout_marginLeft="19dp"
+            android:layout_below="@+id/linearPeopleAffected"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/brandier"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp" />
+
+        <!-- Dropdown list for no of people needed -->
+        <Spinner
+            android:id="@+id/spinnerPeopleNeeded"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/area_stencil"
+            android:background="@drawable/button_dish"
+            android:layout_below="@+id/textViewPeopleNeeded"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp" />
+        </LinearLayout>
+
+        <!-- Enter the type of help needed -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="180dp">
+
+            <TextView
+                android:id="@+id/textViewTypeOfHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Enter the type of help needed"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/brandier"
+                android:textColor="@color/white"
+                android:layout_marginTop="25dp" />
+
+            <!-- Left Side: First Three Checkboxes -->
+            <LinearLayout
+                android:id="@+id/leftCheckBoxLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewTypeOfHelp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBoxShelter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/area_stencil"
+                    android:textColor="@color/white"
+                    android:text="Shelter" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxMedicine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/area_stencil"
+                    android:textColor="@color/white"
+                    android:text="Medicine" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/area_stencil"
+                    android:textColor="@color/white"
+                    android:text="Food" />
+            </LinearLayout>
+
+            <!-- Right Side: Last Three Checkboxes -->
+            <LinearLayout
+                android:id="@+id/rightCheckBoxLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewTypeOfHelp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBoxMedical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/area_stencil"
+                    android:textColor="@color/white"
+                    android:text="Medical Equipment" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxRescue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/area_stencil"
+                    android:textColor="@color/white"
+                    android:text="Rescue Equipment" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxPeople"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/area_stencil"
+                    android:textColor="@color/white"
+                    android:text="People" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Additional comments -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="400dp">
+        <TextView
+            android:id="@+id/textViewAdditionalComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Additional comments"
+            android:fontFamily="@font/brandier"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp" />
+
+        <!-- Textbox for user comments -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:fontFamily="@font/brandier"
+                android:hint="@string/message"
+                style="@style/WhiteHintTextInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextComments"
+            android:layout_width="390dp"
+            android:layout_height="48dp"
+            android:layout_below="@+id/textViewAdditionalComments"
+            android:layout_centerHorizontal="true"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/brandier"
+            android:lines="6"
+            android:gravity="top"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:textColor="#FBF7F7"
+            android:textSize="10sp"
+            android:textColorHint="@android:color/white"
+            android:scrollHorizontally="false"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+        <!-- Send Alert Button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="550dp">
+        <Button
+            android:id="@+id/buttonSendAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Alert"
+            android:fontFamily="@font/brandier"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
